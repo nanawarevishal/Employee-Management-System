@@ -1,0 +1,89 @@
+{% extends 'basic.html' %}
+{% block css %}
+
+.container img {
+    height: 379px;
+    <!-- width: -webkit-fill-available; -->
+}
+.con {
+    margin-top: 28px;
+}
+
+
+.name {
+    margin-left: 104px;
+}
+
+{% endblock css %}
+
+ 
+{% block title %}Emp Management system{% endblock title %}
+{% block body %}
+
+
+{% if emps|length < 1 %}
+<div class="container my-4">
+   
+
+    <h2>Search results</h2>
+    <p>Your search- <strong>{{data}}</strong> did not found any document</p>
+    <h5>Suggestions:</h5>
+    <ul>
+        <li>Make sure that all words are spelled correctly.</li>
+        <li>Try different keywords.</li>
+        <li>Try more general keywords.</li>
+    </ul>
+    
+    <img src="/static/fish.jpg" alt="" srcset="">
+
+</div>
+{% endif %}
+
+
+<div class="container con my-255 ">
+    
+
+    {% for emp in emps %}
+    <h1 class="text-center my-4">{{emp.first_name}}</h1>
+    <div class="row my-125">
+
+        <div class="col-md-6">
+            <img src="/media/{{emp.image}}" alt="not found" srcset="">
+        </div>
+        <div class="col-md-6">
+            <div class="container name ">
+                <label for="name">Name: </label>
+                <strong>{{emp.first_name}}{{ emp.last_name}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Age: </label>
+                <strong>{{emp.age}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Department: </label>
+                <strong>{{emp.dept}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Role: </label>
+                <strong>{{emp.role}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Skills: </label>
+                <strong>{{emp.skills}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Phone: </label>
+                <strong>{{emp.phone}}</strong>
+            </div>
+            <div class="container name">
+                <label for="name">Hire Date: </label>
+                <strong>{{emp.hire_date}}</strong>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+
+{% endblock body %}
+

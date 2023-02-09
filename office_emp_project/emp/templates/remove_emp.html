@@ -1,0 +1,63 @@
+{% include 'basic.html' %}
+
+
+{% block body %}
+ <!--<div class="dropdown">
+    <a class="btn btn-primary dropdown-toggle mx-4 my-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Choose Employee To be Remove
+    </a>
+  
+    <ul class="dropdown-menu">
+        {% for emps in emps %}
+        
+        <li><a class="dropdown-item" href="/remove_emp/{{emps.emp_id}}" name="name">{{emps.first_name}}  {{emps.last_name}}</a></li>
+        <!-- <li><a class="dropdown-item" href="/remove_emp" name="name">{{emps.first_name}}  {{emps.last_name}}</a></li> -->
+        
+        <!-- {% endfor %} 
+    </ul> -->
+
+   
+<div class="container">
+
+  <form action="{% url 'remove_emp' %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3 mx-4">
+      <label for="first_name" class="form-label">First Name</label><br>
+      <input type="text"name="first_name"value="{{first_name}}"><br>
+      
+<!--     
+      <label for="last_name"class="form-label">Last Name</label><br>
+      <input type="text"name="last_name" value="{{last_name}}"><br>
+      
+      
+
+      <label for="dep"class="form-label">Department</label><br>
+      <input type="text"name="dept" value="{{dept}}"><br>
+   
+      <label for="salary"class="form-label">Salary</label><br>
+      <input type="number"name="salary" value="{{salary}}"><br>
+      
+      <label for="bonus"class="form-label">Bonus</label><br>
+      <input type="number"name="bonus" value="{{bonus}}"><br>
+    
+      <label for="role"class="form-label">role</label><br>
+      <input type="text"name="role" value="{{role}}"><br>
+   
+      <label for="phone"class="form-label">phone</label><br>
+      <input type="number"name="phone" value="{{phone}}"><br>
+      
+      <label for="hire_date"class="form-label">Hire Date</label><br>
+      <input type="datetime-local" name="hire_date"value="{{hire_date}}"><hr>
+      
+         <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+          
+          <button type="submit" class="btn btn-primary mx-4">Submit</button>
+        </div> 
+      </form>
+      
+    </div>
+  
+
+
+{% endblock body %}

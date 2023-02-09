@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+    
+{% block title %}Emp Management system{% endblock title %}
+{% block manage_emp %}active{% endblock manage_emp %}
+ 
+
+    {% block body %}
+    <div class="container">
+        <h1>Office Employee Management System</h1>
+
+        <hr>
+        <a class="btn btn-primary" href="{% url 'all_emp' %}" role="button">View All Employee</a>
+        <a class="btn btn-primary" href="{% url 'add_emp' %}" role="button">Add  Employee</a>
+        <!-- <a class="btn btn-primary" href="{% url 'remove_emp' %}" role="button">Remove an Employee</a> -->
+        <a class="btn btn-primary" href="/remove_emp" role="button">Remove an Employee</a>
+        <a class="btn btn-primary" href="{% url 'search_emp' %}" role="button">Search an Employee</a>
+      </div> 
+
+    
+  {% endblock body %}

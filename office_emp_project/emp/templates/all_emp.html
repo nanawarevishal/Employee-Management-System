@@ -1,0 +1,43 @@
+{% include 'basic.html' %}
+
+{% block body %}
+
+<h1>Emp Data</h1>
+<hr>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="table-primary">Emp ID</th>
+        <th scope="col"class="table-secondary">First Name </th>
+        <th scope="col"class="table-secondary">Last Name</th>
+        <th scope="col" class="table-success">Salary</th>
+        <th scope="col" class="table-danger">Bonus</th>
+        <th scope="col"class="table-warning">Phone</th>
+        <th scope="col"class="table-info">Role</th>
+        <th scope="col"class="table-success">Department</th>
+        <th scope="col"class="table-active">Location</th>
+        <th scope="col"class="table-danger">Hired Date</th>
+        
+      </tr>
+    </thead>
+    {% for emp in emps %}
+    <tbody>
+        <tr>
+            <th scope="row" class="table-primary">{{emp.emp_id}}</th>
+            <td class="table-secondary">{{emp.first_name}}</td>
+            <td class="table-secondary">{{emp.last_name}}</td>
+            <td class="table-success">{{emp.salary}}</td>
+            <td class="table-danger">{{emp.bonus}}</td>
+            <td class="table-warning">{{emp.phone}}</td>
+            <td class="table-info">{{emp.role.name}}</td>
+            <td class="table-success">{{emp.dept.name}}</td>
+            <td class="table-active">{{emp.dept.location}}</td>
+            <td class="table-danger">{{emp.hire_date}}</td>      
+        </tr>
+        
+    </tbody>
+    {% endfor %}
+  </table>
+
+{% endblock body %}
